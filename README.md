@@ -44,14 +44,17 @@ python server_run.py
 Access the interface at `http://127.0.0.1:5000`.
 
 ### 2. Command Line Execution
-You can run the analysis scripts directly using a configuration file.
-
-**Single Core Execution (Recommended for Matrix method):**
-To ensure the script uses a single core (useful for batch processing or benchmarking), set the environment variables before running:
+You can run the analysis scripts directly using a configuration file:
 ```bash
-export OMP_NUM_THREADS=1
 python run.py config.json
 ```
+
+> **Tip (For Matrix Method & Benchmarking):**
+> When using the **Matrix method** or running benchmarks, it is recommended to force single-core execution to avoid overhead or ensure consistent timing.
+> ```bash
+> export OMP_NUM_THREADS=1
+> python run.py config.json
+> ```
 
 ### 3. Benchmarking
 To benchmark the performance of the model fitting:
