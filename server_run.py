@@ -577,7 +577,7 @@ def create_app():                      # Gunicorn·uWSGI용 팩토리
 
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    #app.run(port=5001)
     if not os.path.exists(JOBS_DIR):
         os.makedirs(JOBS_DIR)
         print(f"Created job files directory: {JOBS_DIR}")
