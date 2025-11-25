@@ -66,24 +66,19 @@ python benchmark.py config.json [profile]
 
 ## Directory Structure
 
-*   `estmodel.py`: Core model class containing calculation engines (Baldwin, Matrix, NoEx).
-*   `est_data.py`: Handles data loading and processing.
-*   `fit.py`: Fitting logic using `scipy.optimize`.
-*   `mcrun.py`: Monte Carlo simulation script (supports multiprocessing).
-*   `output.py`: Handles output generation and plotting.
-*   `prepare.py`: Utilities for data preparation.
-*   `run.py`: Main execution script for standard fitting.
-*   `server_run.py`: Flask-based web server application.
-*   `benchmark.py`: Script for benchmarking performance.
-*   `requirements.txt`: List of Python dependencies.
-*   `static/`: Static files for the web interface.
-*   `example/`: Contains example datasets (`syn10.txt`, `syn100.txt`).
+*   **`run.py`**: Main execution script for standard fitting via command line.
+*   **`server_run.py`**: Flask-based web server for the graphical user interface.
+*   **`mcrun.py`**: Script for Monte Carlo simulations (supports multiprocessing).
+*   **`benchmark.py`**: Tool for benchmarking model performance.
+*   **`estmodel.py`**: Core library containing calculation engines (Baldwin, Matrix, NoEx) and model logic.
+*   **`example/`**: Contains example datasets (`syn10.txt`, `syn100.txt`) for testing.
+*   **`requirements.txt`**: Python dependencies.
 
 ## Citation
 
 If you use ONEST in your research, please cite:
 
-> Choi, J., Lee, S.-Y., Han, K., Carneiro, M. G., Ryu, K.-S., & Lee, D. "ONEST: A Web-Based Platform for the Rapid and Robust Analysis of Protein Excited States through CEST Spectroscopy." (in preparation)
+> Choi, J., Lee, SY., Han, K., Carneiro, M. G., Ryu, KS., & Lee, D. "ONEST: A Web-Based Platform for the Rapid and Robust Analysis of Protein Excited States through CEST Spectroscopy." (in preparation)
 
 ## License
 
