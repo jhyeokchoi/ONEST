@@ -64,6 +64,10 @@ python benchmark.py config.json [profile]
 - `config.json`: Path to your configuration file.
 - `profile`: (Optional) Add this argument to enable cProfile and generate a `benchmark_profile.prof` file.
 
+## Input Generation
+
+For instructions on how to generate input files for ONEST, please refer to the [input4onest](https://github.com/jhyeokchoi/input4onest) repository.
+
 ## Directory Structure
 
 *   **`run.py`**: Main execution script for standard fitting via command line.
