@@ -108,10 +108,10 @@ def index():
                 <h2>1. Initial Preparation (prepare.py)</h2>
                 <form id="prepareForm" method="post" enctype="multipart/form-data">
                     <label for="data_files">Select Data Files
-  (e.g.,
-  <a href="{{ url_for('static', filename='input_raw/syn10.txt') }}" download>syn10.txt</a>,
-  <a href="{{ url_for('static', filename='input_raw/syn100.txt') }}" download>syn100.txt</a>
-  ):
+                        (e.g.,
+                            <a href="{{ url_for('download_example', filename='syn10.txt') }}" download>syn10.txt</a>,
+                            <a href="{{ url_for('download_example', filename='syn100.txt') }}" download>syn100.txt</a>
+                        ):
                     </label>
                     <input type="file" name="data_files[]" id="data_files_input" multiple required>
                     <button type="button" onclick="submitInitialPrepare()">Run Initial Prepare</button>
@@ -565,13 +565,19 @@ def download_file(job_id, filename):
 
     return send_from_directory(job_dir, safe_filename, as_attachment=True)
 
+@app.route('/example/<path:filename>')
+def download_example(filename):
+    example_dir = os.path.join(BASE_DIR, "example")
+    safe_filename = secure_filename(filename)
+    return send_from_directory(example_dir, safe_filename, as_attachment=True)
+
 def create_app():                      # Gunicorn·uWSGI용 팩토리
     return app                         # 이미 만든 app 객체 그대로 반환
 
 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=5001)
     if not os.path.exists(JOBS_DIR):
         os.makedirs(JOBS_DIR)
         print(f"Created job files directory: {JOBS_DIR}")
